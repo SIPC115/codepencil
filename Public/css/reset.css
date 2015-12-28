@@ -1,0 +1,294 @@
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*
+ * 全局字体设置，基准字号设置为 62.5%，10px = 1em = 100% = 8pt
+ */
+html {
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+/*
+ * 去除默认外边距
+ */
+body,
+dl, dd,
+ul, ol,
+p, hr,
+h1, h2, h3, h4, h5, h6, pre,
+form, thead, tbody, tfoot, th, td, input, textarea,
+fieldset, legend, optgroup,blockquote, figure, menu {
+    margin:0;
+    padding:0;
+}
+/*
+ * 修复HTML5标签错误显示
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+/*
+ * 修复IE8-9新元素显示错误
+ */
+audio,
+canvas,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+/*
+ * 隐藏不支持controls的标签
+ */
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+/*
+ * 连接修复，去掉背景 outline，获取焦点框
+ */
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: #76daff;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+/*
+ * 去掉列表前的标识, li会继承
+ */
+ul, ol {
+    list-style-type: none;
+    list-style-image: none;
+}
+/*
+ * 修正attr标签没有下划线问题
+ */
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+/*
+ *  修正部分语义化标签显示问题
+ */
+b,
+strong {
+    font-weight: bold;
+}
+dfn {
+    font-style: italic;
+}
+/*
+ * 重置标题，采用自定义
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+mark {
+    background: #ff0;
+    color: #000;
+}
+/*
+ * 防止sub和sup影响行高
+ */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+/*
+ * 其他设置
+ */
+img, iframe {
+    border: 0;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+figure {
+    margin: 1em 40px;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+}
+/*
+ * 移除单元格间距让其边重合
+ */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*
+ * 定义各浏览器显示一致的样式
+ */
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+/*
+ * 1. 修正所有浏览器中字体不继承的问题
+ * 2. 修正所有浏览器中字号不继承的问题
+ * 3. 修正 Firefox 3+， Safari5 和 Chrome 中外边距不同的问题
+ * 4. 改善在所有浏览器下的垂直对齐方式
+ */
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+
+
+/*
+ * 统一 IE 8/9/10/11 `overflow`属性为visible
+ */
+input,
+button {
+    *overflow: visible;
+}
+
+/*
+ * 重置按钮禁用时光标样式
+ */
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+/**
+ * 1. 修正 IE 8/9 box-sizing 被设置为「content-box」的问题
+ * 2. 移除 IE 8/9 中多余的内边距
+ * 3. 移除 IE7 中多余的内边距(IE6 中任然存在)
+ */
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+    *height: 13px;
+    *width: 13px;
+}
+
+/**
+ * 1. 修正 Safari 5 和 Chrome 中「appearance」被设置为「searchfield」的问题
+ * 2. 修正 Safari 5 和 Chrome 中「box-sizing」被设置为 「border-box」的问题
+ */
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+/*
+ * 去除FF3+内补丁和内边框
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border:0;
+    padding:0;
+}
+/*
+ * 1. 让FF,S5,Chrome下的textarea只能纵向拉伸高度, 避免因拉伸而影响布局
+ * 2. 去掉IE下默认的滚动条占位
+ * 3. 默认textarea与文本baseline对齐，导致文本沉在下面比较难看，这里统一与文本顶对齐
+ */
+textarea {
+    resize: vertical;
+    overflow: auto;
+    vertical-align: top;
+}
+/*
+ * label 元素给予手型，暗示此处可点击
+ */
+label {
+    cursor: pointer;
+}
+/*
+ * 统一 select 样式, Firefox 中有 padding:1px 0
+ */
+select[size],
+select[multiple],
+select[size][multiple] {
+    border: 1px solid #AAA;
+    padding:0;
+}
+/*
+ * body字体等设置, 参照淘宝网
+ */
+body {
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif;
+}
+/*
+ * 布局：栅格系统  g-
+ */
+
+/*
+ * 功能类布局 f-
+ */
+.f-clearfix:before,
+.f-clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.f-left {
+    float:left;
+}
+.f-right {
+    float:right;
+}
+/*
+ * 元素隐藏
+ */
+.f-hide {
+    display: none !important;
+    visibility: hidden !important;
+}
+/*
+ * 文字溢出显示省略号
+ */
+.fn-text-ellipsis {
+    display: block;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-align: left;
+}

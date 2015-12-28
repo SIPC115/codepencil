@@ -1,0 +1,238 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    /* height: 100%; */
+    /*overflow: hidden;*/
+}
+.main-header{
+    position: relative;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    width: 100%;
+
+    background-color: #000;
+}
+.logo-center{
+    color: #fedd31;
+}
+.title-area{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    padding: 10px 15px 0 15px;
+
+    white-space: nowrap;
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+.title-area .logo{
+    width: 35px;
+}
+.title-area .logo img{
+    width: 70%;
+    margin-top: 3px;
+}
+.title-text{
+    overflow: hidden;
+
+    width: 100%;
+}
+.title-text .by{
+    font-size: 1rem;
+
+    letter-spacing: 1px;
+
+    color: #999;
+}
+#pen-title{
+    font-size: 2rem;
+    line-height: 1.1;
+
+    overflow: hidden;
+
+    margin: 0 0 4px 0;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#pen-title a{
+    color: #fff;
+}
+.title-btn button{
+    margin-right: 15px;
+
+    background: #343436;
+
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+            align-self: center;
+}
+
+button.btn.newbtn{
+    position: relative;
+    left: 70%;
+}
+.title-btn button a {
+    color: #fff;
+    font-size: 14px;
+}
+.title-btn button:hover{
+    border: 3px solid #343436;
+    background: #484747;
+}
+.title-btn button i{
+    margin-right: 5px;
+
+    vertical-align: -1px;
+}
+.title-btn{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    -webkit-box-flex: 6;
+    -webkit-flex: 6;
+        -ms-flex: 6;
+            flex: 6;
+    align-items: center;
+}
+.user-btn{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    flex-grow: 16;
+    justify-content: flex-end;
+}
+.page-wrap{
+    overflow: auto;
+
+    height: calc(100% - 180px);
+    margin-top: 70px;
+    padding-right: 10px;
+
+    color: #fff;
+    background-color: #1d1f20;
+}
+
+.list-author{
+    color: #ccc;
+}
+
+.list-name{
+    overflow: hidden;
+
+    width: 100%;
+    margin-bottom: 10px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #fedd31;
+}
+
+.list-name a{
+    color: #fedd31;
+}
+.list-main{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-direction: column;
+
+    margin-top: 10px;
+
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.list-column{
+    position: relative;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.list-area{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-direction: column;
+    /* flex: 1; */
+
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(0,0,0,0.4);
+}
+.pagination{
+    font-size: 0;
+
+    height: 110px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+    text-align: center;
+
+    background-color: #1d1f20;
+}
+.pagination span{
+    font-size: 16px;
+
+    display: inline-block;
+
+    margin: 0 1px;
+    padding: 8px 12px;
+
+    cursor: pointer;
+
+    background-color: #343436;
+}
+
+.pagination .current{
+    color: #fedd31;
+}
+
+.pagination a:hover{
+    color: #fedd31;
+}
+
+.pagination a{
+    color: #fff;
+}
+
+.pagination a:hover{
+    color: #fedd31;
+}
+.pagination .rows{
+    display: none;
+}
+.pagination span:hover{
+    color: #f5e8a4;
+    background: #484747;
+}

@@ -1,0 +1,231 @@
+html{
+    width: 100%;
+}
+
+body{
+    position: relative;
+
+    width: 100%;
+
+    background-color: #1d1f20;
+}
+
+.main-header{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    width: 100%;
+
+    background-color: #000;
+}
+
+.logo-center{
+    color: #fedd31;
+}
+
+.title-area{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    padding: 10px 15px 0 15px;
+
+    white-space: nowrap;
+}
+
+.title-area .logo{
+    width: 35px;
+}
+
+.title-area .logo img{
+    width: 70%;
+    margin-top: 3px;
+}
+
+.title-text{
+    overflow: hidden;
+
+    width: 100%;
+}
+
+.title-text .by{
+    font-size: 1rem;
+
+    letter-spacing: 1px;
+
+    color: #999;
+}
+
+#pen-title{
+    font-size: 2rem;
+    line-height: 1.1;
+
+    overflow: hidden;
+
+    margin: 0 0 4px 0;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#pen-title a{
+    color: #fff;
+}
+
+.title-btn button{
+    margin-right: 15px;
+
+    background: #343436;
+
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+            align-self: center;
+}
+
+.title-btn button a{
+    font-size: 14px;
+
+    color: #fff;
+}
+
+.title-btn button:hover{
+    border: 3px solid #343436;
+    background: #484747;
+}
+
+.title-btn button i{
+    margin-right: 5px;
+
+    vertical-align: -1px;
+}
+
+.title-btn{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    -webkit-box-flex: 6;
+    -webkit-flex: 6;
+        -ms-flex: 6;
+            flex: 6;
+    align-items: center;
+}
+
+.user-btn{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    flex-grow: 16;
+    justify-content: flex-end;
+}
+
+.page-wrap{
+    top: 69px;
+    bottom: 0;
+    left: 0;
+
+    padding: 31px 0;
+}
+
+.list-main{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    padding-top: 69px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.list-area{
+    width: 400px;
+    height: 95px;
+    margin-bottom: 50px;
+    padding: 20px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.list-author{
+    color: #ccc;
+}
+
+.list-name{
+    overflow: hidden;
+
+    width: 100%;
+    margin-bottom: 10px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #fedd31;
+}
+
+.list-name a{
+    color: #fedd31;
+}
+
+.pagination{
+    position: absolute;
+    bottom: 20px;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #fff;
+}
+
+.pagination span{
+    font-size: 16px;
+
+    display: inline-block;
+
+    margin: 0 1px;
+    padding: 8px 12px;
+
+    cursor: pointer;
+
+    background-color: #343436;
+}
+
+.pagination .current{
+    color: #fedd31;
+}
+
+.pagination a:hover{
+    color: #fedd31;
+}
+
+.pagination a{
+    color: #fff;
+}
+
+.pagination a:hover{
+    color: #fedd31;
+}
+
+.pagination .rows{
+    display: none;
+}
+
+.pagination span:hover{
+    color: #f5e8a4;
+    background: #484747;
+}

@@ -1,0 +1,83 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./styles/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./styles/css/base.css">
+    <link rel="stylesheet" type="text/css" href="./user.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="title-area">
+            <a href="{:U('Code/readcode/readc/3')}" class="logo">
+                <img src="./images/logo.png" alt="">
+            </a>
+            <div class="title-text">
+                <h1 id="pen-title">
+                    <!-- 这里a放置该帖子的title -->
+                    <a href="{:U('Code/readcode/readc/3')}">
+                        SIPC <span class="logo-center">Code</span>
+                    </a>
+                </h1>
+                <!-- 这里填用户名 -->
+                <div class="by">该代码片段 <span>{$Think.session.username}</span></div>
+            </div>
+        </div>
+        <div class="title-btn">
+            <button class="btn newbtn">新建</button>
+            <div class="user-btn">
+                <button class="btn"><?php echo $_SESSION['username'] ?></button>
+            </div>
+            <button class="clear btn"><a href="">注销</a></button>
+        </div>
+    </header>
+    <div class="page-wrap">
+        <div class="list-main">
+            <div class="list-area">
+                <div class="list-name"><a href="">{$vo.codename}</a></div>
+                <div class="list-author">作者：<span>{$vo.username}</span></div>
+            </div>
+            <div class="list-area">
+                <div class="list-name"><a href="">{$vo.codename}</a></div>
+                <div class="list-author">作者：<span>{$vo.username}</span></div>
+            </div>   
+            <div class="list-area">
+                <div class="list-name"><a href="">{$vo.codename}</a></div>
+                <div class="list-author">作者：<span>{$vo.username}</span></div>
+            </div>   
+            <div class="list-area">
+                <div class="list-name"><a href="">{$vo.codename}</a></div>
+                <div class="list-author">作者：<span>{$vo.username}</span></div>
+            </div>   
+            <div class="list-area">
+                <div class="list-name"><a href="">{$vo.codename}</a></div>
+                <div class="list-author">作者：<span>{$vo.username}</span></div>
+            </div>   
+            <div class="list-area">
+                <div class="list-name"><a href="">{$vo.codename}</a></div>
+                <div class="list-author">作者：<span>{$vo.username}</span></div>
+            </div>   
+            <div class="list-area">
+                <div class="list-name"><a href="">{$vo.codename}</a></div>
+                <div class="list-author">作者：<span>{$vo.username}</span></div>
+            </div>      
+        </div> 
+    </div>   
+        <ul class="pagination">
+            <li>
+                <div>  
+                    <span class="current">1</span>
+                    <span>
+                        <a class="num" href="/codepencil/index.php/Code/readcode/readc/3/p/2.html">2</a>
+                    </span>
+                    <span>
+                        <a class="num" href="/codepencil/index.php/Code/readcode/readc/3/p/3.html">3</a>
+                    </span> 
+                    <span>
+                        <a class="next" href="/codepencil/index.php/Code/readcode/readc/3/p/2.html">下一页</a>
+                    </span>  
+                    <li class="rows">共<b>8</b>条记录&nbsp;&nbsp;第<b>1</b>页/共<b>3</b>页</li>
+                </div>
+            </li>
+        </ul>
+</body>
+</html>

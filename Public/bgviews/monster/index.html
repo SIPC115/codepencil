@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <title></title> 
+    <link rel="icon" href="__PUBLIC__/images/logo-16.png" sizes="16x16">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+
+body {
+    background-color: #DCDCDC;
+}
+
+.jelly-container {
+    width: 100%;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(top, rgba(0, 141, 210, 0.63) 0%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(0, 141, 210, 0.63) 0%, transparent 100%);
+}
+
+.jelly-wrapper {
+    width: 265px;
+    position: absolute;
+    -webkit-transform: translate3D(-50%, -75%, 0);
+    -ms-transform: translate3D(-50%, -75%, 0);
+    transform: translate3D(-50%, -75%, 0);
+    -webkit-animation: jelly-movement 10s infinite linear;
+    animation: jelly-movement 10s infinite linear;
+}
+
+.jelly-hair {
+    height: 75px;
+    width: 100px;
+    background: -webkit-linear-gradient(top, #ef891a 0%, #ef891a 20%, #ebf28a 100%);
+    background: linear-gradient(to bottom, #ef891a 0%, #ef891a 20%, #ebf28a 100%);
+    /* W3C */
+    position: absolute;
+    left: 29%;
+    -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -15px, 0) rotate3d(0, 0, 1, 75deg);
+    transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -15px, 0) rotate3d(0, 0, 1, 75deg);
+    border-radius: 25px;
+    -webkit-animation: hair-movement 10s infinite linear;
+    animation: hair-movement 10s infinite linear;
+}
+
+.jelly-body {
+    background: -webkit-linear-gradient(top, #008dd2 0%, #ebf28a 100%);
+    background: linear-gradient(to bottom, #008dd2 0%, #ebf28a 100%);
+    /* W3C */
+    position: relative;
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-animation: head-movement 10s infinite linear;
+    animation: head-movement 10s infinite linear;
+}
+
+.jelly-inner {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    -webkit-animation: facing-movement 10s infinite linear;
+    animation: facing-movement 10s infinite linear;
+}
+
+.jelly-eyes:before, .jelly-eyes:after {
+    content: '';
+    position: absolute;
+    height: 15px;
+    bottom: -25px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #FFF;
+    -webkit-animation: eyes-blink 3.5s infinite linear;
+    animation: eyes-blink 3.5s infinite linear;
+}
+
+.jelly-eyes {
+    position: absolute;
+    top: -40px;
+    -webkit-animation: eyes-movement 10s infinite linear;
+    animation: eyes-movement 10s infinite linear;
+}
+.jelly-eyes:before {
+    left: 60px;
+}
+.jelly-eyes:after {
+    left: -70px;
+}
+
+.jelly-hands:before, .jelly-hands:after {
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: 45px;
+    border-top: 0;
+    border-radius: 0 0 50% 50%;
+    box-shadow: 0px 5px 6px #3B949B;
+}
+
+.jelly-hands {
+    position: absolute;
+    top: 65px;
+}
+.jelly-hands:before {
+    left: 110px;
+}
+.jelly-hands:after {
+    left: -155px;
+}
+
+.jelly-mouth {
+    position: absolute;
+    height: 80px;
+    width: 200px;
+    left: 50%;
+    top: 35%;
+    -webkit-transform: translate3D(-50%, 0, 0);
+    -ms-transform: translate3D(-50%, 0, 0);
+    transform: translate3D(-50%, 0, 0);
+    background-color: #F4CFD1;
+    border-radius: 30px;
+    box-shadow: 0px 0px 7px #808080;
+}
+.jelly-mouth:after {
+    content: '';
+    position: absolute;
+    height: 3%;
+    width: 60%;
+    background-color: #FF9393;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3D(-50%, 0, 0);
+    -ms-transform: translate3D(-50%, 0, 0);
+    transform: translate3D(-50%, 0, 0);
+    box-shadow: 0 0 3px #FF6B6B;
+    -webkit-animation: mouth-movement 10s infinite linear;
+    animation: mouth-movement 10s infinite linear;
+}
+
+div[class^="jelly-tentacle-"] {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background-color: #ebf28a;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0px 2.5px 0px #008D9B;
+}
+
+.jelly-tentacle-1 {
+    left: 0%;
+    -webkit-animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.2s;
+    animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.2s;
+}
+
+.jelly-tentacle-2 {
+    left: 25%;
+    -webkit-transform: translate3D(-25%, 0, 0);
+    -ms-transform: translate3D(-25%, 0, 0);
+    transform: translate3D(-25%, 0, 0);
+    -webkit-animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.4s;
+    animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.4s;
+}
+
+.jelly-tentacle-3 {
+    left: 50%;
+    -webkit-transform: translate3D(-50%, 0, 0);
+    -ms-transform: translate3D(-50%, 0, 0);
+    transform: translate3D(-50%, 0, 0);
+    -webkit-animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.1s;
+    animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.1s;
+}
+
+.jelly-tentacle-4 {
+    right: 25%;
+    -webkit-transform: translate3D(25%, 0, 0);
+    -ms-transform: translate3D(25%, 0, 0);
+    transform: translate3D(25%, 0, 0);
+    -webkit-animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.7s;
+    animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.7s;
+}
+
+.jelly-tentacle-5 {
+    right: 0%;
+    -webkit-animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.3s;
+    animation: tentacle-animation 1s infinite cubic-bezier(0.46, 0.2, 0.53, 0.92) -0.3s;
+}
+
+.jelly-shadow {
+    position: absolute;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(134, 134, 134, 0.23);
+    box-shadow: 0 0 10px rgba(134, 134, 134, 0.23);
+    bottom: 5%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    -webkit-animation: shadow-movement 10s infinite linear;
+    animation: shadow-movement 10s infinite linear;
+}
+
+div[class^="bubble-"] {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    background-color: rgba(0, 141, 210, 0.3);
+    border-radius: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+div[class^="bubble-"]:after {
+    content: '';
+    position: absolute;
+    height: 85%;
+    width: 85%;
+    border-top: 1px solid rgba(255, 255, 255, 0.63);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+    transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+}
+
+.bubble-1 {
+    bottom: 4px;
+    left: 41%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -0.52s;
+    animation: bubble-movement 4s infinite ease-in -0.52s;
+}
+
+.bubble-2 {
+    bottom: 7px;
+    left: 97%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -0.86s;
+    animation: bubble-movement 4s infinite ease-in -0.86s;
+}
+
+.bubble-3 {
+    bottom: 3px;
+    left: 25%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -1.09s;
+    animation: bubble-movement 4s infinite ease-in -1.09s;
+}
+
+.bubble-4 {
+    bottom: 3px;
+    left: 49%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -2.04s;
+    animation: bubble-movement 4s infinite ease-in -2.04s;
+}
+
+.bubble-5 {
+    bottom: 8px;
+    left: 78%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -0.96s;
+    animation: bubble-movement 4s infinite ease-in -0.96s;
+}
+
+.bubble-6 {
+    bottom: 11px;
+    left: 2%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -2.26s;
+    animation: bubble-movement 4s infinite ease-in -2.26s;
+}
+
+.bubble-7 {
+    bottom: 6px;
+    left: 78%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -1.31s;
+    animation: bubble-movement 4s infinite ease-in -1.31s;
+}
+
+.bubble-8 {
+    bottom: 9px;
+    left: 64%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -1.05s;
+    animation: bubble-movement 4s infinite ease-in -1.05s;
+}
+
+.bubble-9 {
+    bottom: 6px;
+    left: 6%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -2.57s;
+    animation: bubble-movement 4s infinite ease-in -2.57s;
+}
+
+.bubble-10 {
+    bottom: 4px;
+    left: 37%;
+    -webkit-animation: bubble-movement 4s infinite ease-in -2.26s;
+    animation: bubble-movement 4s infinite ease-in -2.26s;
+}
+
+.bubble-11 {
+    bottom: 2px;
+    left: 35%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -1.36s;
+    animation: bubble-movement 3s infinite ease-in -1.36s;
+}
+
+.bubble-12 {
+    bottom: 2px;
+    left: 19%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -0.13s;
+    animation: bubble-movement 3s infinite ease-in -0.13s;
+}
+
+.bubble-13 {
+    bottom: 4px;
+    left: 52%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -2.89s;
+    animation: bubble-movement 3s infinite ease-in -2.89s;
+}
+
+.bubble-14 {
+    bottom: 2px;
+    left: 78%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -1.94s;
+    animation: bubble-movement 3s infinite ease-in -1.94s;
+}
+
+.bubble-15 {
+    bottom: 5px;
+    left: 25%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -2.29s;
+    animation: bubble-movement 3s infinite ease-in -2.29s;
+}
+
+.bubble-16 {
+    bottom: 3px;
+    left: 55%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -1.13s;
+    animation: bubble-movement 3s infinite ease-in -1.13s;
+}
+
+.bubble-17 {
+    bottom: 5px;
+    left: 83%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -1.89s;
+    animation: bubble-movement 3s infinite ease-in -1.89s;
+}
+
+.bubble-18 {
+    bottom: 7px;
+    left: 25%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -0.91s;
+    animation: bubble-movement 3s infinite ease-in -0.91s;
+}
+
+.bubble-19 {
+    bottom: 6px;
+    left: 96%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -2.06s;
+    animation: bubble-movement 3s infinite ease-in -2.06s;
+}
+
+.bubble-20 {
+    bottom: 5px;
+    left: 45%;
+    -webkit-animation: bubble-movement 3s infinite ease-in -0.92s;
+    animation: bubble-movement 3s infinite ease-in -0.92s;
+}
+
+@-webkit-keyframes jelly-movement {
+    0% {
+        top: 55%;
+        left: 50%;
+    }
+    5% {
+        top: 50%;
+    }
+    10% {
+        top: 55%;
+    }
+    15% {
+        top: 50%;
+    }
+    20% {
+        top: 55%;
+    }
+    25% {
+        top: 50%;
+        left: calc(100% - 135px);
+    }
+    30% {
+        top: 55%;
+    }
+    35% {
+        top: 50%;
+    }
+    40% {
+        top: 55%;
+    }
+    45% {
+        top: 50%;
+    }
+    50% {
+        top: 55%;
+        left: 50%;
+    }
+    55% {
+        top: 50%;
+    }
+    60% {
+        top: 55%;
+    }
+    65% {
+        top: 50%;
+    }
+    70% {
+        top: 55%;
+    }
+    75% {
+        top: 50%;
+        left: 135px;
+    }
+    80% {
+        top: 55%;
+    }
+    85% {
+        top: 50%;
+    }
+    90% {
+        top: 55%;
+    }
+    95% {
+        top: 50%;
+    }
+    100% {
+        top: 55%;
+        left: 50%;
+    }
+}
+
+@keyframes jelly-movement {
+    0% {
+        top: 55%;
+        left: 50%;
+    }
+    5% {
+        top: 50%;
+    }
+    10% {
+        top: 55%;
+    }
+    15% {
+        top: 50%;
+    }
+    20% {
+        top: 55%;
+    }
+    25% {
+        top: 50%;
+        left: calc(100% - 135px);
+    }
+    30% {
+        top: 55%;
+    }
+    35% {
+        top: 50%;
+    }
+    40% {
+        top: 55%;
+    }
+    45% {
+        top: 50%;
+    }
+    50% {
+        top: 55%;
+        left: 50%;
+    }
+    55% {
+        top: 50%;
+    }
+    60% {
+        top: 55%;
+    }
+    65% {
+        top: 50%;
+    }
+    70% {
+        top: 55%;
+    }
+    75% {
+        top: 50%;
+        left: 135px;
+    }
+    80% {
+        top: 55%;
+    }
+    85% {
+        top: 50%;
+    }
+    90% {
+        top: 55%;
+    }
+    95% {
+        top: 50%;
+    }
+    100% {
+        top: 55%;
+        left: 50%;
+    }
+}
+@-webkit-keyframes tentacle-animation {
+    0% {
+        bottom: -8%;
+    }
+    50% {
+        bottom: -20%;
+    }
+    100% {
+        bottom: -8%;
+    }
+}
+@keyframes tentacle-animation {
+    0% {
+        bottom: -8%;
+    }
+    50% {
+        bottom: -20%;
+    }
+    100% {
+        bottom: -8%;
+    }
+}
+@-webkit-keyframes facing-movement {
+    0% {
+        left: 60%;
+    }
+    20% {
+        left: 60%;
+    }
+    25% {
+        left: 50%;
+    }
+    30% {
+        left: 40%;
+    }
+    70% {
+        left: 40%;
+    }
+    75% {
+        left: 50%;
+    }
+    80% {
+        left: 60%;
+    }
+    100% {
+        left: 60%;
+    }
+}
+@keyframes facing-movement {
+    0% {
+        left: 60%;
+    }
+    20% {
+        left: 60%;
+    }
+    25% {
+        left: 50%;
+    }
+    30% {
+        left: 40%;
+    }
+    70% {
+        left: 40%;
+    }
+    75% {
+        left: 50%;
+    }
+    80% {
+        left: 60%;
+    }
+    100% {
+        left: 60%;
+    }
+}
+@-webkit-keyframes mouth-movement {
+    0% {
+        left: 52%;
+    }
+    20% {
+        left: 52%;
+    }
+    25% {
+        left: 50%;
+    }
+    30% {
+        left: 46%;
+    }
+    70% {
+        left: 46%;
+    }
+    75% {
+        left: 50%;
+    }
+    80% {
+        left: 52%;
+    }
+    100% {
+        left: 52%;
+    }
+}
+@keyframes mouth-movement {
+    0% {
+        left: 52%;
+    }
+    20% {
+        left: 52%;
+    }
+    25% {
+        left: 50%;
+    }
+    30% {
+        left: 46%;
+    }
+    70% {
+        left: 46%;
+    }
+    75% {
+        left: 50%;
+    }
+    80% {
+        left: 52%;
+    }
+    100% {
+        left: 52%;
+    }
+}
+@-webkit-keyframes eyes-movement {
+    0% {
+        left: 5px;
+    }
+    20% {
+        left: 5px;
+    }
+    25% {
+        left: 0px;
+    }
+    30% {
+        left: -5px;
+    }
+    70% {
+        left: -5px;
+    }
+    75% {
+        left: 0px;
+    }
+    80% {
+        left: 5px;
+    }
+    100% {
+        left: 5px;
+    }
+}
+@keyframes eyes-movement {
+    0% {
+        left: 5px;
+    }
+    20% {
+        left: 5px;
+    }
+    25% {
+        left: 0px;
+    }
+    30% {
+        left: -5px;
+    }
+    70% {
+        left: -5px;
+    }
+    75% {
+        left: 0px;
+    }
+    80% {
+        left: 5px;
+    }
+    100% {
+        left: 5px;
+    }
+}
+@-webkit-keyframes head-movement {
+    0% {
+        border-top-right-radius: 70px;
+        border-top-left-radius: 90px;
+    }
+    20% {
+        border-top-right-radius: 70px;
+        border-top-left-radius: 90px;
+    }
+    25% {
+        border-top-right-radius: 80px;
+        border-top-left-radius: 80px;
+    }
+    30% {
+        border-top-right-radius: 90px;
+        border-top-left-radius: 70px;
+    }
+    70% {
+        border-top-right-radius: 90px;
+        border-top-left-radius: 70px;
+    }
+    75% {
+        border-top-right-radius: 80px;
+        border-top-left-radius: 80px;
+    }
+    80% {
+        border-top-right-radius: 70px;
+        border-top-left-radius: 90px;
+    }
+    100% {
+        border-top-right-radius: 70px;
+        border-top-left-radius: 90px;
+    }
+}
+@keyframes head-movement {
+    0% {
+        border-top-right-radius: 70px;
+        border-top-left-radius: 90px;
+    }
+    20% {
+        border-top-right-radius: 70px;
+        border-top-left-radius: 90px;
+    }
+    25% {
+        border-top-right-radius: 80px;
+        border-top-left-radius: 80px;
+    }
+    30% {
+        border-top-right-radius: 90px;
+        border-top-left-radius: 70px;
+    }
+    70% {
+        border-top-right-radius: 90px;
+        border-top-left-radius: 70px;
+    }
+    75% {
+        border-top-right-radius: 80px;
+        border-top-left-radius: 80px;
+    }
+    80% {
+        border-top-right-radius: 70px;
+        border-top-left-radius: 90px;
+    }
+    100% {
+        border-top-right-radius: 70px;
+        border-top-left-radius: 90px;
+    }
+}
+@-webkit-keyframes hair-movement {
+    0% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    20% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    25% {
+        -webkit-transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    30% {
+        -webkit-transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    70% {
+        -webkit-transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    75% {
+        -webkit-transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    80% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    100% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+}
+@keyframes hair-movement {
+    0% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    20% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    25% {
+        -webkit-transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    30% {
+        -webkit-transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    70% {
+        -webkit-transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    75% {
+        -webkit-transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    80% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+    100% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);
+    }
+}
+@-webkit-keyframes shadow-movement {
+    0% {
+        width: 250px;
+        left: 50%;
+    }
+    5% {
+        width: 210px;
+    }
+    10% {
+        width: 250px;
+    }
+    15% {
+        width: 210px;
+    }
+    20% {
+        width: 250px;
+    }
+    25% {
+        width: 210px;
+        left: calc(100% - 135px);
+    }
+    30% {
+        width: 250px;
+    }
+    35% {
+        width: 210px;
+    }
+    40% {
+        width: 250px;
+    }
+    45% {
+        width: 210px;
+    }
+    50% {
+        width: 250px;
+        left: 50%;
+    }
+    55% {
+        width: 210px;
+    }
+    60% {
+        width: 250px;
+    }
+    65% {
+        width: 210px;
+    }
+    70% {
+        width: 250px;
+    }
+    75% {
+        width: 210px;
+        left: 135px;
+    }
+    80% {
+        width: 250px;
+    }
+    85% {
+        width: 210px;
+    }
+    90% {
+        width: 250px;
+    }
+    95% {
+        width: 210px;
+    }
+    100% {
+        width: 250px;
+        left: 50%;
+    }
+}
+@keyframes shadow-movement {
+    0% {
+        width: 250px;
+        left: 50%;
+    }
+    5% {
+        width: 210px;
+    }
+    10% {
+        width: 250px;
+    }
+    15% {
+        width: 210px;
+    }
+    20% {
+        width: 250px;
+    }
+    25% {
+        width: 210px;
+        left: calc(100% - 135px);
+    }
+    30% {
+        width: 250px;
+    }
+    35% {
+        width: 210px;
+    }
+    40% {
+        width: 250px;
+    }
+    45% {
+        width: 210px;
+    }
+    50% {
+        width: 250px;
+        left: 50%;
+    }
+    55% {
+        width: 210px;
+    }
+    60% {
+        width: 250px;
+    }
+    65% {
+        width: 210px;
+    }
+    70% {
+        width: 250px;
+    }
+    75% {
+        width: 210px;
+        left: 135px;
+    }
+    80% {
+        width: 250px;
+    }
+    85% {
+        width: 210px;
+    }
+    90% {
+        width: 250px;
+    }
+    95% {
+        width: 210px;
+    }
+    100% {
+        width: 250px;
+        left: 50%;
+    }
+}
+@-webkit-keyframes eyes-blink {
+    0% {
+        height: 15px;
+    }
+    3% {
+        height: 1px;
+    }
+    5% {
+        height: 15px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@keyframes eyes-blink {
+    0% {
+        height: 15px;
+    }
+    3% {
+        height: 1px;
+    }
+    5% {
+        height: 15px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+@-webkit-keyframes bubble-movement {
+    0% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
+        height: 1px;
+        width: 1px;
+    }
+    100% {
+        -webkit-transform: translate3d(-50%, -500px, 0);
+        transform: translate3d(-50%, -500px, 0);
+        height: 75px;
+        width: 75px;
+    }
+}
+@keyframes bubble-movement {
+    0% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
+        height: 1px;
+        width: 1px;
+    }
+    100% {
+        -webkit-transform: translate3d(-50%, -500px, 0);
+        transform: translate3d(-50%, -500px, 0);
+        height: 75px;
+        width: 75px;
+    }
+}
+</style>
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div class="jelly-container">
+			<div class="bubble-1"></div>
+			<div class="bubble-2"></div>
+			<div class="bubble-3"></div>
+			<div class="bubble-4"></div>
+			<div class="bubble-5"></div>
+			<div class="bubble-6"></div>
+			<div class="bubble-7"></div>
+			<div class="bubble-8"></div>
+			<div class="bubble-9"></div>
+			<div class="bubble-10"></div>
+			<div class="jelly-wrapper">
+				<div class="jelly-hair"></div>
+				<div class="jelly-body">
+					<div class="jelly-inner">
+						<div class="jelly-eyes"></div>
+						<div class="jelly-mouth"></div>
+						<div class="jelly-hands"></div>
+					</div>
+				</div>
+				<div class="jelly-tentacle-1"></div>
+				<div class="jelly-tentacle-2"></div>
+				<div class="jelly-tentacle-3"></div>
+				<div class="jelly-tentacle-4"></div>
+				<div class="jelly-tentacle-5"></div>
+			</div>
+			<div class="jelly-shadow"></div>
+			<div class="bubble-11"></div>
+			<div class="bubble-12"></div>
+			<div class="bubble-13"></div>
+			<div class="bubble-14"></div>
+			<div class="bubble-15"></div>
+			<div class="bubble-16"></div>
+			<div class="bubble-17"></div>
+			<div class="bubble-18"></div>
+			<div class="bubble-19"></div>
+			<div class="bubble-20"></div>
+		</div>   
+  </body>
+</html>
+ 
