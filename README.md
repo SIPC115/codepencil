@@ -10,8 +10,8 @@ codepencil v0.1 前端代码分享平台
 其中过多的冗余内容也没有剔除，期待改进。    
 #### 参与开发者  
 
-前端部分：   [@CaelumTian]("https://github.com/T-phantom"),  [@M-Withershins]("https://github.com/M-Withershins"), [@Jorten]("https://github.com/5606595")    
-PHP后台部分：[@hbxtben]("https://github.com/hbxtben")   
+前端部分：   [@CaelumTian](https://github.com/T-phantom),  [@M-Withershins](https://github.com/M-Withershins), [@Jorten](https://github.com/5606595)    
+PHP后台部分：[@hbxtben](https://github.com/hbxtben)   
 
 ### 问题和改进  
 
