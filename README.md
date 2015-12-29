@@ -11,7 +11,7 @@ codepencil v0.1 前端代码分享平台
 #### 参与开发者  
 
 前端部分：   [@CaelumTian](https://github.com/T-phantom),  [@M-Withershins](https://github.com/M-Withershins), [@Jorten](https://github.com/5606595)    
-PHP后台部分：[@hbxtben](https://github.com/hbxtben)   
+PHP后端部分：[@hbxtben](https://github.com/hbxtben)   
 
 ### 问题和改进  
 
