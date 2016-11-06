@@ -1,17 +1,17 @@
 <?php
 return array(
-	//'配置�?=>'配置�?
-	'DB_TYPE' => 'mysql',
+	//'é…ç½®é¡?=>'é…ç½®å€?
+	'DB_TYPE' => '',
 	'DB_HOST' => '127.0.0.1',
 	'DB_NAME' => 'codepencil',
-	'DB_USER' => 'root',
-	'DB_PWD' => 'sipc@115%%server',
-	'DB_PORT' => '3306',
+	'DB_USER' => '',
+	'DB_PWD' => '',
+	'DB_PORT' => '',
 	'DB_CHARSET' => 'utf8',
 
     'URL_MODEL' => 1,
 	/**
-	 *通过路由的完全闭包规则进行URL保护
+	 *é€šè¿‡è·¯ç”±çš„å®Œå…¨é—­åŒ…è§„åˆ™è¿›è¡ŒURLä¿æŠ¤
 	 */
 	// 'URL_ROUTER_ON' => ture,
 	// 'URL_ROUTE_RULES' => array(
